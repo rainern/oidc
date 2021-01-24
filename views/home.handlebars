@@ -1,0 +1,40 @@
+
+<h1>Azure OpenID Connect</h1>
+<form action="https://login.microsoftonline.com/{{{tenant}}}/oauth2/v2.0/authorize">
+    <table stype="width:100%">
+        <tr>
+            <td><label for="client_id">Client ID</label></td>
+            <td><input name="client_id" id="client_id" value="{{{client_id}}}"></td>
+        </tr>
+        <tr>
+            <td><label for="response_type">Response Type</label></td>
+            <td><input name="response_type" id="response_type" value="id_token token"></td>
+        </tr>
+        <tr>
+            <td><label for="redirect_uri">Redirect URI</label></td>
+            <td><input name="redirect_uri" id="redirect_uri" value="{{{redirect_uri}}}"></td>
+        </tr>
+        <tr>
+            <td><label for="response_mode">Response Mode</label></td>
+            <td><input name="response_mode" id="response_mode" value="form_post"></td>
+        <tr>
+            <td><label for="scope">Scope</label></td>
+            <td><input name="scope" id="scope" value="openid"></td>
+        </tr>
+        <tr>
+            <td><label for="nonce">Nonce</label></td>
+            <td><input name="nonce" id="nonce" value="{{{nonce}}}"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Authenticate">
+</form>
+</br>
+<h2>ID token</h2>
+<textarea id="id_token" name="id_token" rows="15" cols="100">
+    {{{id_token}}}
+</textarea>
+</br>
+<h2>Access Token</h2>
+<textarea id="access_token" name="access_token" rows="15" cols="100">
+    {{{access_token}}}
+</textarea>
