@@ -1,7 +1,6 @@
 'use strict';
 
 const express = require('express');
-const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars');
 const crypto = require('crypto');
 
@@ -11,7 +10,10 @@ const app = express();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.urlencoded({
+    extended: true
+  }));
+
 
 // Middleware for setting conf with random nonce
 app.use( (req, res, next) => {
